@@ -12,25 +12,24 @@
 при помощи метода forEach вывести в консоль сообщения в таком виде:
 "Любимый жанр #(номер по порядку, начиная с 1) - это (название из массива)"*/
 
-let numberOfFilms;
 const personalMovieDB = {
-    count: numberOfFilms,
+    count: 0,
     movies: {},
     actors: {},
     genres: [],
     privat: false,
     start: function() {
-        numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
-        while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
-            numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+        personalMovieDB.numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+        while (personalMovieDB.numberOfFilms == '' || personalMovieDB.numberOfFilms == null || isNaN(personalMovieDB.numberOfFilms)) {
+            personalMovieDB.numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
         }
     },
     detectPersonalLevel: function() {
-        if (numberOfFilms < 10) {
+        if (personalMovieDB.numberOfFilms < 10) {
             console.log('Просмотрено довольно мало фильмов');
-        } else if (numberOfFilms >= 10 && numberOfFilms < 30) {
+        } else if (personalMovieDB.numberOfFilms >= 10 && personalMovieDB.numberOfFilms < 30) {
             console.log('Вы классический зритель');
-        } else if (numberOfFilms >= 30) {
+        } else if (personalMovieDB.numberOfFilms >= 30) {
             console.log('Вы киноман');
         } else {
             console.log('Произошла ошибка');
